@@ -1,32 +1,37 @@
 <template>
-  <view class="soroll-view-container">
-    <!-- 左侧滑动区域 -->
+  <!-- 使用自定义组件 -->
+  <view>
 
-    <scroll-view class="left-scroll-view" scroll-y="true" :style="{height:wh + 'px'}">
-      <block v-for="(item,i) in cateList" :key="i">
-        <view :class="['left-scroll-view-item', i === active ? 'active' : '']" @click="activeChange(i)">
-          {{item.cat_name}}
-        </view>
-      </block>
-    </scroll-view>
+    <my-search :radius="'16'" @click="goSearch"></my-search>
+    <view class="soroll-view-container">
+      <!-- 左侧滑动区域 -->
+      <scroll-view class="left-scroll-view" scroll-y="true" :style="{height:wh + 'px'}">
+        <block v-for="(item,i) in cateList" :key="i">
+          <view :class="['left-scroll-view-item', i === active ? 'active' : '']" @click="activeChange(i)">
+            {{item.cat_name}}
+          </view>
+        </block>
+      </scroll-view>
 
-    <!-- 右侧滑动区域 -->
-    <scroll-view class="right-scroll-view" scroll-y="true" :style="{height:wh + 'px'}" :scroll-top="screenTop">
-      <view class="cate-lv2" v-for="item2,i2 in cateLevel2" :key="i2">
-        <view class="cate-lv2-title">
-          / {{item2.cat_name}} /
-        </view>
-        <!-- 三级分类 -->
-        <view class="cate-lv3-list">
-          <view class="cate-lv3-item" v-for="(item3,i3) in item2.children" :key="i3" @click="gotoGoodsList(item3)">
-            <image :src="item3.cat_icon" mode=""></image>
-            <text>{{item3.cat_name}}</text>
+      <!-- 右侧滑动区域 -->
+      <scroll-view class="right-scroll-view" scroll-y="true" :style="{height:wh + 'px'}" :scroll-top="screenTop">
+        <view class="cate-lv2" v-for="item2,i2 in cateLevel2" :key="i2">
+          <view class="cate-lv2-title">
+            / {{item2.cat_name}} /
+          </view>
+          <!-- 三级分类 -->
+          <view class="cate-lv3-list">
+            <view class="cate-lv3-item" v-for="(item3,i3) in item2.children" :key="i3" @click="gotoGoodsList(item3)">
+              <image :src="item3.cat_icon" mode=""></image>
+              <text>{{item3.cat_name}}</text>
+            </view>
           </view>
         </view>
-      </view>
-    </scroll-view>=-
+      </scroll-view>
+    </view>
   </view>
 </template>
+
 
 <script>
   export default {
@@ -44,8 +49,9 @@
     onLoad() {
       const sysInfo = uni.getSystemInfoSync()
       console.log(sysInfo)
-      this.wh = sysInfo.windowHeight
       this.getCateList()
+      this.wh = sysInfo.windowHeight
+
     },
     methods: {
       async getCateList() {
@@ -69,7 +75,13 @@
         uni.navigateTo({
           url: '/subpkg/goods_list/goods_list?cid=' + item.cat_id
         })
+      },
+      goSearch() {
+        uni.navigateTo({
+          url: '/subpkg/search/search'
+        })
       }
+
     }
   }
 </script>
