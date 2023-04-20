@@ -33,3 +33,8 @@
 5. **用户授权** / **微信登录** / **微信支付** 完整流程
 
 ## 项目预览
+![Image text](https://github.com/xudji/Excellent-shop-uniapp-mini-program/blob/main/static/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE1.png) 
+![Image text](https://github.com/xudji/Excellent-shop-uniapp-mini-program/blob/main/static/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE2.png)  
+![Image text](https://github.com/xudji/Excellent-shop-uniapp-mini-program/blob/main/static/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE3.png)  
+![Image text](https://github.com/xudji/Excellent-shop-uniapp-mini-program/blob/main/static/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE4.png) 
+![Image text](https://github.com/xudji/Excellent-shop-uniapp-mini-program/blob/main/static/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE5.png)
